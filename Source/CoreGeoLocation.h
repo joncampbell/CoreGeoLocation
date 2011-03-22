@@ -11,3 +11,4 @@
 #import <CoreGeoLocation/CGLGeoLocation.h>
 #import <CoreGeoLocation/CGLGeoDataProvider.h>
 #import <CoreGeoLocation/CGLGeoDataProviderYahoo.h>
+#import <CoreGeoLocation/CGLGeoDataProviderGoogle.h>

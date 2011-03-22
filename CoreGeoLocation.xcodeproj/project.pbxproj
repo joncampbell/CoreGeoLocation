@@ -23,6 +23,25 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		37C7455A131A0F9000DF7C77 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C74547131A0F9000DF7C77 /* JSON.h */; };
+		37C7455B131A0F9000DF7C77 /* NSObject+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C74548131A0F9000DF7C77 /* NSObject+JSON.h */; };
+		37C7455C131A0F9000DF7C77 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C74549131A0F9000DF7C77 /* NSObject+JSON.m */; };
+		37C7455D131A0F9000DF7C77 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C7454A131A0F9000DF7C77 /* SBJsonParser.h */; };
+		37C7455E131A0F9000DF7C77 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7454B131A0F9000DF7C77 /* SBJsonParser.m */; };
+		37C7455F131A0F9000DF7C77 /* SBJsonStreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C7454C131A0F9000DF7C77 /* SBJsonStreamParser.h */; };
+		37C74560131A0F9000DF7C77 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7454D131A0F9000DF7C77 /* SBJsonStreamParser.m */; };
+		37C74561131A0F9000DF7C77 /* SBJsonStreamParserAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C7454E131A0F9000DF7C77 /* SBJsonStreamParserAdapter.h */; };
+		37C74562131A0F9000DF7C77 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7454F131A0F9000DF7C77 /* SBJsonStreamParserAdapter.m */; };
+		37C74563131A0F9000DF7C77 /* SBJsonStreamParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C74550131A0F9000DF7C77 /* SBJsonStreamParserState.h */; };
+		37C74564131A0F9000DF7C77 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C74551131A0F9000DF7C77 /* SBJsonStreamParserState.m */; };
+		37C74565131A0F9000DF7C77 /* SBJsonStreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C74552131A0F9000DF7C77 /* SBJsonStreamWriter.h */; };
+		37C74566131A0F9000DF7C77 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C74553131A0F9000DF7C77 /* SBJsonStreamWriter.m */; };
+		37C74567131A0F9000DF7C77 /* SBJsonStreamWriterState.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C74554131A0F9000DF7C77 /* SBJsonStreamWriterState.h */; };
+		37C74568131A0F9000DF7C77 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C74555131A0F9000DF7C77 /* SBJsonStreamWriterState.m */; };
+		37C74569131A0F9000DF7C77 /* SBJsonTokeniser.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C74556131A0F9000DF7C77 /* SBJsonTokeniser.h */; };
+		37C7456A131A0F9000DF7C77 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C74557131A0F9000DF7C77 /* SBJsonTokeniser.m */; };
+		37C7456B131A0F9000DF7C77 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C74558131A0F9000DF7C77 /* SBJsonWriter.h */; };
+		37C7456C131A0F9000DF7C77 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C74559131A0F9000DF7C77 /* SBJsonWriter.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		CB0C2FB210606E35006725A8 /* CGLGeoDataProviderGoogle.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0C2FB010606E35006725A8 /* CGLGeoDataProviderGoogle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -113,6 +132,25 @@
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF5E0370ADEE00C91783 /* CoreGeoLocation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreGeoLocation_Prefix.pch; path = ../CoreGeoLocation_Prefix.pch; sourceTree = "<group>"; };
+		37C74547131A0F9000DF7C77 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		37C74548131A0F9000DF7C77 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
+		37C74549131A0F9000DF7C77 /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
+		37C7454A131A0F9000DF7C77 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		37C7454B131A0F9000DF7C77 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		37C7454C131A0F9000DF7C77 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		37C7454D131A0F9000DF7C77 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		37C7454E131A0F9000DF7C77 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		37C7454F131A0F9000DF7C77 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		37C74550131A0F9000DF7C77 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		37C74551131A0F9000DF7C77 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		37C74552131A0F9000DF7C77 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		37C74553131A0F9000DF7C77 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		37C74554131A0F9000DF7C77 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		37C74555131A0F9000DF7C77 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		37C74556131A0F9000DF7C77 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		37C74557131A0F9000DF7C77 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		37C74558131A0F9000DF7C77 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		37C74559131A0F9000DF7C77 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* CoreGeoLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreGeoLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0C2FB010606E35006725A8 /* CGLGeoDataProviderGoogle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGLGeoDataProviderGoogle.h; sourceTree = "<group>"; };
@@ -226,6 +264,7 @@
 		08FB77AEFE84172EC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				37C74546131A0F9000DF7C77 /* JSON */,
 				CB911707105C6D7E00EDA68B /* CoreGeoLocation.h */,
 				32DBCF5E0370ADEE00C91783 /* CoreGeoLocation_Prefix.pch */,
 				CB911678105C5CC900EDA68B /* Additions */,
@@ -266,6 +305,32 @@
 				CB91182B105C86F000EDA68B /* libxml2.dylib */,
 			);
 			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		37C74546131A0F9000DF7C77 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				37C74547131A0F9000DF7C77 /* JSON.h */,
+				37C74548131A0F9000DF7C77 /* NSObject+JSON.h */,
+				37C74549131A0F9000DF7C77 /* NSObject+JSON.m */,
+				37C7454A131A0F9000DF7C77 /* SBJsonParser.h */,
+				37C7454B131A0F9000DF7C77 /* SBJsonParser.m */,
+				37C7454C131A0F9000DF7C77 /* SBJsonStreamParser.h */,
+				37C7454D131A0F9000DF7C77 /* SBJsonStreamParser.m */,
+				37C7454E131A0F9000DF7C77 /* SBJsonStreamParserAdapter.h */,
+				37C7454F131A0F9000DF7C77 /* SBJsonStreamParserAdapter.m */,
+				37C74550131A0F9000DF7C77 /* SBJsonStreamParserState.h */,
+				37C74551131A0F9000DF7C77 /* SBJsonStreamParserState.m */,
+				37C74552131A0F9000DF7C77 /* SBJsonStreamWriter.h */,
+				37C74553131A0F9000DF7C77 /* SBJsonStreamWriter.m */,
+				37C74554131A0F9000DF7C77 /* SBJsonStreamWriterState.h */,
+				37C74555131A0F9000DF7C77 /* SBJsonStreamWriterState.m */,
+				37C74556131A0F9000DF7C77 /* SBJsonTokeniser.h */,
+				37C74557131A0F9000DF7C77 /* SBJsonTokeniser.m */,
+				37C74558131A0F9000DF7C77 /* SBJsonWriter.h */,
+				37C74559131A0F9000DF7C77 /* SBJsonWriter.m */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		CB0C300D106075DF006725A8 /* Utilities */ = {
@@ -336,6 +401,16 @@
 				CB911708105C6D7E00EDA68B /* CoreGeoLocation.h in Headers */,
 				CB0C2FB210606E35006725A8 /* CGLGeoDataProviderGoogle.h in Headers */,
 				CB0C3009106075DA006725A8 /* CGLXML.h in Headers */,
+				37C7455A131A0F9000DF7C77 /* JSON.h in Headers */,
+				37C7455B131A0F9000DF7C77 /* NSObject+JSON.h in Headers */,
+				37C7455D131A0F9000DF7C77 /* SBJsonParser.h in Headers */,
+				37C7455F131A0F9000DF7C77 /* SBJsonStreamParser.h in Headers */,
+				37C74561131A0F9000DF7C77 /* SBJsonStreamParserAdapter.h in Headers */,
+				37C74563131A0F9000DF7C77 /* SBJsonStreamParserState.h in Headers */,
+				37C74565131A0F9000DF7C77 /* SBJsonStreamWriter.h in Headers */,
+				37C74567131A0F9000DF7C77 /* SBJsonStreamWriterState.h in Headers */,
+				37C74569131A0F9000DF7C77 /* SBJsonTokeniser.h in Headers */,
+				37C7456B131A0F9000DF7C77 /* SBJsonWriter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +495,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "CoreGeoLocation" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* CoreGeoLocation */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
@@ -468,6 +550,15 @@
 				CB91169A105C63D300EDA68B /* NSURLResponse+CGLEncodingAdditions.m in Sources */,
 				CB0C2FB310606E35006725A8 /* CGLGeoDataProviderGoogle.m in Sources */,
 				CB0C300A106075DA006725A8 /* CGLXML.m in Sources */,
+				37C7455C131A0F9000DF7C77 /* NSObject+JSON.m in Sources */,
+				37C7455E131A0F9000DF7C77 /* SBJsonParser.m in Sources */,
+				37C74560131A0F9000DF7C77 /* SBJsonStreamParser.m in Sources */,
+				37C74562131A0F9000DF7C77 /* SBJsonStreamParserAdapter.m in Sources */,
+				37C74564131A0F9000DF7C77 /* SBJsonStreamParserState.m in Sources */,
+				37C74566131A0F9000DF7C77 /* SBJsonStreamWriter.m in Sources */,
+				37C74568131A0F9000DF7C77 /* SBJsonStreamWriterState.m in Sources */,
+				37C7456A131A0F9000DF7C77 /* SBJsonTokeniser.m in Sources */,
+				37C7456C131A0F9000DF7C77 /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +628,7 @@
 		1DEB91AE08733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -550,8 +641,11 @@
 				GCC_PREFIX_HEADER = CoreGeoLocation_Prefix.pch;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = CoreGeoLocation;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -559,7 +653,7 @@
 		1DEB91AF08733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -568,8 +662,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = CoreGeoLocation_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = CoreGeoLocation;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -583,6 +680,7 @@
 				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
@@ -596,6 +694,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
 			};

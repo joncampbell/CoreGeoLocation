@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CGLGeoDataProvider.h"
+#import "JSON.h"
 
 @interface CGLGeoDataProviderGoogle : CGLGeoDataProvider {
 	NSString				*apiKey_;

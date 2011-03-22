@@ -6,7 +6,7 @@
 //  Copyright 2009 Karl Adam. BSD Licensed, check ReadMe.markdown for details
 //
 
-#import <Foundation/FOundation.h>
+#import <Foundation/Foundation.h>
 
 // A Private Implementaion Detail to get around the stupid limitations of NSURLConnection
 

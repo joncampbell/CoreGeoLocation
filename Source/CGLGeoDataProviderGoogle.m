@@ -60,19 +60,22 @@
 
 - (void)performRequest:(CGLGeoRequest *)inRequest {
 	NSString *query = nil;
+    NSString *firstParam = nil;
 	if ([inRequest address]) {
 		query = [inRequest address];
+        firstParam = [NSString stringWithString:@"address"];
 	} else if ([inRequest location]) {
 		CLLocationCoordinate2D coordinate = [[inRequest location] coordinate];
 		query = [NSString stringWithFormat:@"%f,%f", coordinate.latitude, coordinate.longitude];
+        firstParam = [NSString stringWithString:@"latlng"];
 	}
 	
 	if (query) {
-		NSMutableString *urlString = [NSMutableString stringWithString:@"http://maps.google.com/maps/geo?"];
+		NSMutableString *urlString = [NSMutableString stringWithString:@"http://maps.googleapis.com/maps/api/geocode/json?"];
 		
-		[urlString appendFormat:@"q=%@&", [query cglEscapedURLEncodedString]];
-		[urlString appendFormat:@"key=%@&", [self.apiKey cglEscapedURLEncodedString]];
-		[urlString appendString:@"sensor=true&output=xml&oe=utf-8"];
+		[urlString appendFormat:@"%@=%@&", firstParam, [query cglEscapedURLEncodedString]];
+		[urlString appendString:@"sensor=true&oe=utf-8"];
+        NSLog(@"urlString: %@", urlString);
 		
 		NSURLRequest *loadRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
 		
@@ -87,7 +90,7 @@
 	
 	if (responseString) {
 		NSLog(@"responseString: %@", responseString);
-		geoLocation = [self _geoLocationFromXML:responseString];
+		geoLocation = [self _geoLocationFromJSON:responseString];
 	}
 	
 	[self.delegate geoLocation:geoLocation determinedForRequest:[self.requestsMapping objectForKey:[inLoader urlRequest]]];
@@ -96,44 +99,105 @@
 	[responseString release];
 }
 
-- (CGLGeoLocation *)_geoLocationFromXML:(NSString *)inXMLString {
+- (CGLGeoLocation *)_geoLocationFromJSON:(NSString *)inJSONString {
 	CGLGeoLocation *geoLocation = nil;
 	
-	if ([inXMLString length]) {
-		const char *xmlCString = [inXMLString UTF8String];
-		xmlParserCtxtPtr parserContext = xmlNewParserCtxt();
-		xmlDocPtr locationXML = xmlCtxtReadMemory(parserContext, xmlCString, strlen(xmlCString), NULL, NULL, XML_PARSE_NOBLANKS);
-		xmlNodePtr rootNode = xmlDocGetRootElement(locationXML);
-		xmlNodePtr resultNode = rootNode->children;
+	if ([inJSONString length]) {
 		
-		NSString *name = nil;
+		NSString *address = nil;
+		NSString *city = nil;
+		NSString *state = nil;
+		NSString *zip = nil;
+		NSString *country = nil;
 		NSString *latitude = nil;
 		NSString *longitude = nil;
-		
-		if (resultNode) {			
-			xmlNodePtr placemarkNode = cgl_xmlNodeGetChildNodeNamed(resultNode, "Placemark");
-			xmlNodePtr nameNode = cgl_xmlNodeGetChildNodeNamed(placemarkNode, "address");
-			xmlNodePtr pointNode = cgl_xmlNodeGetChildNodeNamed(placemarkNode, "Point");
-			xmlNodePtr coordinateNode = cgl_xmlNodeGetChildNodeNamed(pointNode, "coordinates");
-			name = [NSString stringWithUTF8String:(const char *)xmlNodeGetContent(nameNode)];
-			NSString *coordinates = [NSString stringWithUTF8String:(const char *)xmlNodeGetContent(coordinateNode)];
-			NSArray *coordinateParts = [coordinates componentsSeparatedByString:@","];
-			latitude = [coordinateParts objectAtIndex:0];
-			longitude = [coordinateParts objectAtIndex:1];
+        
+        // Create new SBJSON parser object
+        SBJsonParser *parser = [[SBJsonParser alloc] init];
+        
+        // http://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&sensor=true_or_false
+        
+        // parse the JSON response into an object
+        // Here we're using NSArray since we're parsing an array of JSON status objects
+        NSDictionary *data = (NSDictionary *) [parser objectWithString:inJSONString error:nil];
+        
+        NSLog(@"data: %@", [data description]);
+        
+        NSArray *results = (NSArray *) [data objectForKey:@"results"];
+        NSLog(@"results: %@", [results description]);
+        
+        for (NSDictionary *result in results) {
+            //NSLog(@"test: %@", [test description]);
+            NSArray *address_components = (NSArray *) [result objectForKey:@"address_components"];
+            
+            for (NSDictionary *address_component in address_components) {
+                NSDictionary *types = [address_component objectForKey:@"types"];
+                NSLog(@"types: %@", [types description]);
+                for (NSString *type in types) {
+                    NSLog(@"type: %@", type);
+                    if ([type isEqualToString: @"postal_code"]) {
+                        zip = [address_component objectForKey:@"long_name"];
+                        NSLog(@"postal code: %@", zip);
+                    }
+                    if ([type isEqualToString: @"locality"]) {
+                        city = [address_component objectForKey:@"long_name"];
+                        NSLog(@"city: %@", city);
+                    }
+                    if ([type isEqualToString: @"administrative_area_level_1"]) {
+                        state = [address_component objectForKey:@"short_name"];
+                        NSLog(@"state: %@", state);
+                    }
+                    if ([type isEqualToString: @"country"]) {
+                        country = [address_component objectForKey:@"short_name"];
+                        NSLog(@"country: %@", country);
+                    }
+                }
+            }
+            
+            // the full address will be the first address
+            if (address==nil) {
+                address = [result objectForKey:@"formatted_address"];
+            }
+        }
+        
+       /* NSArray *address_components = (NSArray *) [results objectForKey:@"address_components"];
+        
+        for (NSDictionary *address_component in address_components) {
+            NSDictionary *types = [address_component objectForKey:@"types"];
+            NSLog(@"descripton: %@", [types description]);
+            for (NSString *type in types) {
+                NSLog(@"type: %@", type);
+                if ([type isEqualToString: @"postal_code"]) {
+                    zip = [address_component objectForKey:@"long_name"];
+                    NSLog(@"postal code: %@", zip);
+                }
+            }
+        }*/
 			
-			if (latitude && longitude) {
-				CLLocation *location = [[CLLocation alloc] initWithLatitude:[latitude doubleValue] longitude:[longitude doubleValue]];
-				geoLocation = [[[CGLGeoLocation alloc] initWithName:name andCoreLocation:location] autorelease];
-				[location release];
-			}			
-		}
-		
-		xmlFreeDoc(locationXML);
-		xmlFreeParserCtxt(parserContext);
-		xmlCleanupMemory();
+            /*
+			address = [NSString stringWithUTF8String:(const char *)xmlNodeGetContent(nameNode)];
+			city = [NSString stringWithUTF8String:(const char *)xmlNodeGetContent(localityNameNode)];
+			state = [NSString stringWithUTF8String:(const char *)xmlNodeGetContent(administrativeAreaNameNode)];
+			zip = [NSString stringWithUTF8String:(const char *)xmlNodeGetContent(postalCodeNumberNode)];
+			country = [NSString stringWithUTF8String:(const char *)xmlNodeGetContent(countryNameNode)];
+             */
+        
+        //NSString *coordinates = [NSString stringWithUTF8String:(const char *)xmlNodeGetContent(coordinateNode)];
+        //NSArray *coordinateParts = [coordinates componentsSeparatedByString:@","];
+        //latitude = [coordinateParts objectAtIndex:0];
+        //longitude = [coordinateParts objectAtIndex:1];
+        
+        // for reversing the address in to lat and long
+        //if (latitude && longitude) {
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:[latitude doubleValue] longitude:[longitude doubleValue]];
+        geoLocation = [[[CGLGeoLocation alloc] initWithAddress:address city:city state:state zip:zip country:country andCoreLocation:location] autorelease];
+        [location release];
+        //}
+        //CLLocation *location = nil;
 	}
 	
 	return geoLocation;	
 }
 
 @end
+
