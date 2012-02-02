@@ -6,9 +6,9 @@
 //  Copyright 2009 Karl Adam. BSD Licensed, check ReadMe.markdown for details
 //
 
-#import <CoreGeoLocation/CGLGeoManager.h>
-#import <CoreGeoLocation/CGLGeoRequest.h>
-#import <CoreGeoLocation/CGLGeoLocation.h>
-#import <CoreGeoLocation/CGLGeoDataProvider.h>
-#import <CoreGeoLocation/CGLGeoDataProviderYahoo.h>
-#import <CoreGeoLocation/CGLGeoDataProviderGoogle.h>
+#import "CGLGeoManager.h"
+#import "CGLGeoRequest.h"
+#import "CGLGeoLocation.h"
+#import "CGLGeoDataProvider.h"
+#import "CGLGeoDataProviderYahoo.h"
+#import "CGLGeoDataProviderGoogle.h"
