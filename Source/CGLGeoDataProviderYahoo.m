@@ -120,7 +120,7 @@ http://where.yahooapis.com/geocode?q=38.898717,+-77.035974&gflags=R&appid=[youra
 
         xmlNodePtr currentNode = resultNode;
 
-        for (; currentNode || strcmp("Result", currentNodeName) != 0; currentNode = currentNode->next) {
+        for (; currentNode || currentNode && strcmp("Result", currentNodeName) != 0; currentNode = currentNode->next) {
             currentNodeName = (const char *) currentNode->name;
             if (strcmp("Result", currentNodeName) == 0) {
                 resultNode = currentNode;
