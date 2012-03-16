@@ -113,18 +113,15 @@
 		NSString *longitude = nil;
         
         // Create new SBJSON parser object
-        SBJsonParser *parser = [[SBJsonParser alloc] init];
+        SBJsonParser *parser = [[[SBJsonParser alloc] init] autorelease];
         
         // http://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&sensor=true_or_false
         
         // parse the JSON response into an object
         // Here we're using NSArray since we're parsing an array of JSON status objects
         NSDictionary *data = (NSDictionary *) [parser objectWithString:inJSONString error:nil];
-        
-        NSLog(@"data: %@", [data description]);
-        
+                
         NSArray *results = (NSArray *) [data objectForKey:@"results"];
-        NSLog(@"results: %@", [results description]);
         
         for (NSDictionary *result in results) {
             //NSLog(@"test: %@", [test description]);

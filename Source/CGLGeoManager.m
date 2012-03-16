@@ -59,13 +59,13 @@ static CGLGeoManager *_theStaticGeoManagerInstance = nil;
 }
 
 - (CGLGeoRequest *)determineGeographicalNameForAddress:(NSString *)inAddress {
-	CGLGeoRequest *geoRequest = [[CGLGeoRequest alloc] initWithAddress:inAddress];
+	CGLGeoRequest *geoRequest = [[[CGLGeoRequest alloc] initWithAddress:inAddress] autorelease];
 	[self determineGeographicalNameWithRequest:geoRequest];
 	return geoRequest;
 }
 
 - (CGLGeoRequest *)determineGeographicalNameForLocation:(CLLocation *)inLocation {
-	CGLGeoRequest *geoRequest = [[CGLGeoRequest alloc] initWithLocation:inLocation];
+	CGLGeoRequest *geoRequest = [[[CGLGeoRequest alloc] initWithLocation:inLocation] autorelease];
 	[self determineGeographicalNameWithRequest:geoRequest];
 	return geoRequest;
 }
