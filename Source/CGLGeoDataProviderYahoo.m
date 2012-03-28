@@ -116,7 +116,7 @@ http://where.yahooapis.com/geocode?q=38.898717,+-77.035974&gflags=R&appid=[youra
         xmlDocPtr locationXML = xmlCtxtReadMemory(parserContext, xmlCString, strlen(xmlCString), NULL, NULL, XML_PARSE_NOBLANKS);
         xmlNodePtr rootNode = xmlDocGetRootElement(locationXML);
         xmlNodePtr resultNode = rootNode->children;
-        const char *currentNodeName = NULL;
+        const char *currentNodeName = "";
 
         xmlNodePtr currentNode = resultNode;
 
